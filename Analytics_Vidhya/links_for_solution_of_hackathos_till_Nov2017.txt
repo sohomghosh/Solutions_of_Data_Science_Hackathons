@@ -1,0 +1,10 @@
+https://github.com/sohomghosh/AV_McKinsey_Nov17
+https://github.com/sohomghosh/AV_CrossSell_Oct17
+https://github.com/sohomghosh/AV_IITBHU-Fest_Sep17
+https://github.com/sohomghosh/AV_QuickSolver_RatingsPredict_Apr17
+https://github.com/sohomghosh/AV_MiniHack_ML_Cab-SurgePrice-Predict_Feb17
+https://github.com/sohomghosh/AV_Hulk_SharePrice_Prediction
+https://github.com/sohomghosh/AV_MLWARE1_sarcasm_detect_in_tweets
+https://github.com/sohomghosh/AV_Knocktober_HealthCare_Predict_Probability_of_Stall_Visit
+https://github.com/sohomghosh/AV_BlackFriday_Customer-Analytics_Predict-Purchase-Amount
+https://github.com/sohomghosh/AV-Practice-Problem-BigMart-Sales-Prediction---2
