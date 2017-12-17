@@ -257,6 +257,7 @@ yvalid_enc = np_utils.to_categorical(yvalid)
 # zero pad the sequences
 xtrain_pad = sequence.pad_sequences(xtrain_seq, maxlen=max_len)
 xvalid_pad = sequence.pad_sequences(xvalid_seq, maxlen=max_len)
+xtest_pad = sequence.pad_sequences(xtest_seq, maxlen=max_len)
 
 word_index = token.word_index
 
@@ -328,8 +329,8 @@ model.fit(xtrain_pad, y=ytrain_enc, batch_size=512, epochs=100, verbose=1, valid
 
 
 valid_preds = model.predict(np.array(xvalid_pad))
-pred = model.predict(np.array())
-print(log_loss(y_valid, valid_preds))
+pred = model.predict(np.array(xtest_pad))
+print(log_loss(yvalid_enc, valid_preds))
 
 submission  = pd.DataFrame(pred)
 submission ['id'] = test['id']
@@ -367,8 +368,8 @@ model.fit(xtrain_pad, y=ytrain_enc, batch_size=512, epochs=100,
           verbose=1, validation_data=(xvalid_pad, yvalid_enc), callbacks=[earlystop])
 
 valid_preds = model.predict(np.array(xvalid_pad))
-pred = model.predict(np.array())
-print(log_loss(y_valid, valid_preds))
+pred = model.predict(np.array(xtest_pad))
+print(log_loss(yvalid_enc, valid_preds))
 
 submission  = pd.DataFrame(pred)
 submission ['id'] = test['id']
@@ -406,8 +407,8 @@ model.fit(xtrain_pad, y=ytrain_enc, batch_size=512, epochs=100,
           verbose=1, validation_data=(xvalid_pad, yvalid_enc), callbacks=[earlystop])
 
 valid_preds = model.predict(np.array(xvalid_pad))
-pred = model.predict(np.array())
-print(log_loss(y_valid, valid_preds))
+pred = model.predict(np.array(xtest_pad))
+print(log_loss(yvalid_enc, valid_preds))
 
 submission  = pd.DataFrame(pred)
 submission ['id'] = test['id']
