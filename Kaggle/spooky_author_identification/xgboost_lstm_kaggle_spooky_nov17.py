@@ -33,7 +33,7 @@ test=pd.read_csv('/home/sohom/Desktop/Kaggle_Spooky Author Identification/test.c
 
 test['author']=np.nan
 train_test=train.append(test)
-
+num_classes = len(set(train['author']))
 sentences_split=[re.split('\W', i) for i in train_test['text']]
 
 #wordvec
@@ -174,7 +174,7 @@ model.add(Dense(300, activation='relu'))
 model.add(Dropout(0.3))
 model.add(BatchNormalization())
 
-model.add(Dense(3))
+model.add(Dense(num_classes))
 model.add(Activation('softmax'))
 
 # compile the model
@@ -315,7 +315,7 @@ model.add(Dropout(0.8))
 model.add(Dense(1024, activation='relu'))
 model.add(Dropout(0.8))
 
-model.add(Dense(3))
+model.add(Dense(num_classes))
 model.add(Activation('softmax'))
 model.compile(loss='categorical_crossentropy', optimizer='adam')
 
@@ -358,7 +358,7 @@ model.add(Dropout(0.8))
 model.add(Dense(1024, activation='relu'))
 model.add(Dropout(0.8))
 
-model.add(Dense(3))
+model.add(Dense(num_classes))
 model.add(Activation('softmax'))
 model.compile(loss='categorical_crossentropy', optimizer='adam')
 
@@ -397,7 +397,7 @@ model.add(Dropout(0.8))
 model.add(Dense(1024, activation='relu'))
 model.add(Dropout(0.8))
 
-model.add(Dense(3))
+model.add(Dense(num_classes))
 model.add(Activation('softmax'))
 model.compile(loss='categorical_crossentropy', optimizer='adam')
 
@@ -731,7 +731,7 @@ model.add(Dropout(0.8))
 model.add(Dense(1024, activation='relu'))
 model.add(Dropout(0.8))
 
-model.add(Dense(3))
+model.add(Dense(num_classes))
 model.add(Activation('softmax'))
 model.compile(loss='categorical_crossentropy', optimizer='adam')
 
