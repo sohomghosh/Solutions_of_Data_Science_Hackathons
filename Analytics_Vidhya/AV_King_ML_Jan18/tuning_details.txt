@@ -1,0 +1,440 @@
+nrounds = 1000
+params = {"objective": "reg:linear","booster": "gbtree", "nthread": 4,"silent": 1,"eta": 0.01, "max_depth": 8, "subsample": 0.9, "colsample_bytree": 0.7,"min_child_weight": 1,"seed": 2016,"tree_method": "exact"}
+bst = xgb.train(params, dtrain, num_boost_round=nrounds, evals=watchlist, verbose_eval=400)
+valid_preds = bst.predict(dvalid)
+print(mean_squared_error(validation_set['kda_ratio'], valid_preds))
+#674451.220023
+sub_1.csv
+
+
+params = {"objective": "reg:linear","booster": "gbtree", "nthread": 4,"silent": 1,"eta": 0.01, "max_depth": 8, "subsample": 0.1, "colsample_bytree": 0.7,"min_child_weight": 1,"seed": 2016,"tree_method": "exact"}
+bst = xgb.train(params, dtrain, num_boost_round=nrounds, evals=watchlist, verbose_eval=400)
+valid_preds = bst.predict(dvalid)
+print(mean_squared_error(validation_set['kda_ratio'], valid_preds))
+#657161.366638
+sub_2.csv
+
+
+params = {"objective": "reg:linear","booster": "gbtree", "nthread": 4,"silent": 1,"eta": 0.01, "max_depth": 8, "subsample": 0.01, "colsample_bytree": 0.7,"min_child_weight": 1,"seed": 2016,"tree_method": "exact"}
+bst = xgb.train(params, dtrain, num_boost_round=nrounds, evals=watchlist, verbose_eval=400)
+valid_preds = bst.predict(dvalid)
+print(mean_squared_error(validation_set['kda_ratio'], valid_preds))
+#652218.303018
+sub_3.csv
+
+
+nrounds = 900
+params = {"objective": "reg:linear","booster": "gbtree", "nthread": 4,"silent": 1,"eta": 0.01, "max_depth": 8, "subsample": 0.01, "colsample_bytree": 0.7,"min_child_weight": 1,"seed": 2016,"tree_method": "exact"}
+bst = xgb.train(params, dtrain, num_boost_round=nrounds, evals=watchlist, verbose_eval=400)
+valid_preds = bst.predict(dvalid)
+print(mean_squared_error(validation_set['kda_ratio'], valid_preds))
+#647164.722036
+sub_4.csv
+
+
+nrounds = 850
+params = {"objective": "reg:linear","booster": "gbtree", "nthread": 4,"silent": 1,"eta": 0.01, "max_depth": 8, "subsample": 0.01, "colsample_bytree": 0.7,"min_child_weight": 1,"seed": 2016,"tree_method": "exact"}
+bst = xgb.train(params, dtrain, num_boost_round=nrounds, evals=watchlist, verbose_eval=400)
+valid_preds = bst.predict(dvalid)
+print(mean_squared_error(validation_set['kda_ratio'], valid_preds))
+#646536.631523
+sub_5.csv
+
+
+nrounds = 850
+params = {"objective": "reg:linear","booster": "gbtree", "nthread": 4,"silent": 1,"eta": 0.01, "max_depth": 8, "subsample": 0.01, "colsample_bytree": 0.5,"min_child_weight": 1,"seed": 2016,"tree_method": "exact"}
+bst = xgb.train(params, dtrain, num_boost_round=nrounds, evals=watchlist, verbose_eval=400)
+valid_preds = bst.predict(dvalid)
+print(mean_squared_error(validation_set['kda_ratio'], valid_preds))
+#644131.500037
+sub_6.csv
+
+
+nrounds = 850
+params = {"objective": "reg:linear","booster": "gbtree", "nthread": 4,"silent": 1,"eta": 0.01, "max_depth": 8, "subsample": 0.01, "colsample_bytree": 0.4,"min_child_weight": 1,"seed": 2016,"tree_method": "exact"}
+bst = xgb.train(params, dtrain, num_boost_round=nrounds, evals=watchlist, verbose_eval=400)
+valid_preds = bst.predict(dvalid)
+print(mean_squared_error(validation_set['kda_ratio'], valid_preds))
+#638548.8316
+sub_7.csv
+
+
+nrounds = 850
+params = {"objective": "reg:linear","booster": "gbtree", "nthread": 4,"silent": 1,"eta": 0.01, "max_depth": 8, "subsample": 0.01, "colsample_bytree": 0.3,"min_child_weight": 1,"seed": 2016,"tree_method": "exact"}
+bst = xgb.train(params, dtrain, num_boost_round=nrounds, evals=watchlist, verbose_eval=400)
+valid_preds = bst.predict(dvalid)
+print(mean_squared_error(validation_set['kda_ratio'], valid_preds))
+#636655.296132
+sub_8.csv
+
+
+nrounds = 850
+params = {"objective": "reg:linear","booster": "gbtree", "nthread": 4,"silent": 1,"eta": 0.01, "max_depth": 8, "subsample": 0.01, "colsample_bytree": 0.3,"min_child_weight": 2,"seed": 2016,"tree_method": "exact"}
+bst = xgb.train(params, dtrain, num_boost_round=nrounds, evals=watchlist, verbose_eval=400)
+valid_preds = bst.predict(dvalid)
+print(mean_squared_error(validation_set['kda_ratio'], valid_preds))
+#635979.834883
+
+
+nrounds = 850
+params = {"objective": "reg:linear","booster": "gbtree", "nthread": 4,"silent": 1,"eta": 0.01, "max_depth": 8, "subsample": 0.01, "colsample_bytree": 0.3,"min_child_weight": 3,"seed": 2016,"tree_method": "exact"}
+bst = xgb.train(params, dtrain, num_boost_round=nrounds, evals=watchlist, verbose_eval=400)
+valid_preds = bst.predict(dvalid)
+print(mean_squared_error(validation_set['kda_ratio'], valid_preds))
+#635385.212052
+sub_9.csv
+
+
+
+
+
+
+#####################Light GBM###########################
+params = {
+    'task': 'train',
+    'boosting_type': 'gbdt',
+    'objective': 'regression',
+    'metric': {'l2', 'rmse'},
+    'num_leaves': 31,
+    'learning_rate': 0.01,
+    'feature_fraction': 0.9,
+    'bagging_fraction': 0.8,
+    'bagging_freq': 5,
+    'verbose': 0
+}
+evals_result = {}
+lgbm = lgb.train(params, dtrain, num_boost_round=20, valid_sets=dvalid, early_stopping_rounds=5, evals_result=evals_result, verbose_eval=10)
+The mse of prediction using validation set is: 867984.39418
+
+---------------------------------------------------------------
+
+params = {
+    'task': 'train',
+    'boosting_type': 'gbdt',
+    'objective': 'regression',
+    'metric': {'l2', 'rmse'},
+    'num_leaves': 31,
+    'learning_rate': 0.01,
+    'feature_fraction': 0.9,
+    'bagging_fraction': 0.8,
+    'bagging_freq': 5,
+    'verbose': 0
+}
+evals_result = {}
+lgbm = lgb.train(params, dtrain, num_boost_round=950, valid_sets=dvalid,  evals_result=evals_result, verbose_eval=10)#early_stopping_rounds=500,
+The mse of prediction using validation set is: 662124.053524
+lgbm_sub_3.csv
+
+------------------------------------------------------------------
+
+params = {
+    'task': 'train',
+    'boosting_type': 'gbdt',
+    'objective': 'regression',
+    'metric': {'l2', 'rmse'},
+    'num_leaves': 25,
+    'learning_rate': 0.01,
+    'feature_fraction': 0.9,
+    'bagging_fraction': 0.8,
+    'bagging_freq': 5,
+    'verbose': 0
+}
+lgbm_sub_4.csv
+660551.467391
+------------------------------------------------------------------
+
+
+params = {
+    'task': 'train',
+    'boosting_type': 'gbdt',
+    'objective': 'regression',
+    'metric': {'l2', 'rmse'},
+    'num_leaves': 25,
+    'learning_rate': 0.01,
+    'feature_fraction': 0.8,
+    'bagging_fraction': 0.8,
+    'bagging_freq': 5,
+    'verbose': 0
+}
+5
+657151.573393
+--------------------------------------------------------------
+
+params = {
+    'task': 'train',
+    'boosting_type': 'gbdt',
+    'objective': 'regression',
+    'metric': {'l2', 'rmse'},
+    'num_leaves': 25,
+    'learning_rate': 0.01,
+    'feature_fraction': 0.6,
+    'bagging_fraction': 0.8,
+    'bagging_freq': 5,
+    'verbose': 0
+}
+
+6
+652900.082282
+-----------------------------------------------------------
+
+params = {
+    'task': 'train',
+    'boosting_type': 'gbdt',
+    'objective': 'regression',
+    'metric': {'l2', 'rmse'},
+    'num_leaves': 25,
+    'learning_rate': 0.01,
+    'feature_fraction': 0.1,
+    'bagging_fraction': 0.8,
+    'bagging_freq': 5,
+    'verbose': 0
+}
+7
+638096.967035
+
+----------------------------------------------------------
+
+params = {
+    'task': 'train',
+    'boosting_type': 'gbdt',
+    'objective': 'regression',
+    'metric': {'l2', 'rmse'},
+    'num_leaves': 25,
+    'learning_rate': 0.01,
+    'feature_fraction': 0.2,
+    'bagging_fraction': 0.8,
+    'bagging_freq': 5,
+    'verbose': 0
+}
+8
+635773.385337
+
+--------------------------------------------------------
+params = {
+    'task': 'train',
+    'boosting_type': 'gbdt',
+    'objective': 'regression',
+    'metric': {'l2', 'rmse'},
+    'num_leaves': 25,
+    'learning_rate': 0.01,
+    'feature_fraction': 0.2,
+    'bagging_fraction': 0.5,
+    'bagging_freq': 5,
+    'verbose': 0
+}
+9
+635253.201751
+
+--------------------------------------------------------
+
+params = {
+    'task': 'train',
+    'boosting_type': 'gbdt',
+    'objective': 'regression',
+    'metric': {'l2', 'rmse'},
+    'num_leaves': 25,
+    'learning_rate': 0.01,
+    'feature_fraction': 0.2,
+    'bagging_fraction': 0.4,
+    'bagging_freq': 5,
+    'verbose': 0
+}
+10
+634964.348678
+
+------------------------------------------------------
+
+params = {
+    'task': 'train',
+    'boosting_type': 'gbdt',
+    'objective': 'regression',
+    'metric': {'l2', 'rmse'},
+    'num_leaves': 25,
+    'learning_rate': 0.01,
+    'feature_fraction': 0.2,
+    'bagging_fraction': 0.3,
+    'bagging_freq': 5,
+    'verbose': 0
+}
+11
+633149.672286
+
+------------------------------------------------------
+params = {
+    'task': 'train',
+    'boosting_type': 'gbdt',
+    'objective': 'regression',
+    'metric': {'l2', 'rmse'},
+    'num_leaves': 25,
+    'learning_rate': 0.01,
+    'feature_fraction': 0.2,
+    'bagging_fraction': 0.2,
+    'bagging_freq': 5,
+    'verbose': 0
+}
+12
+631791.409591
+-------------------------------------------------------
+params = {
+    'task': 'train',
+    'boosting_type': 'gbdt',
+    'objective': 'regression',
+    'metric': {'l2', 'rmse'},
+    'num_leaves': 25,
+    'learning_rate': 0.01,
+    'feature_fraction': 0.2,
+    'bagging_fraction': 0.1,
+    'bagging_freq': 5,
+    'verbose': 0
+}
+13
+630765.145509
+-------------------------------------------------------
+params = {
+    'task': 'train',
+    'boosting_type': 'gbdt',
+    'objective': 'regression',
+    'metric': {'l2', 'rmse'},
+    'num_leaves': 25,
+    'learning_rate': 0.01,
+    'feature_fraction': 0.2,
+    'bagging_fraction': 0.09,
+    'bagging_freq': 5,
+    'verbose': 0
+}
+14
+630391.602866
+-------------------------------------------------------
+params = {
+    'task': 'train',
+    'boosting_type': 'gbdt',
+    'objective': 'regression',
+    'metric': {'l2', 'rmse'},
+    'num_leaves': 25,
+    'learning_rate': 0.01,
+    'feature_fraction': 0.2,
+    'bagging_fraction': 0.09,
+    'bagging_freq': 2,
+    'verbose': 0
+}
+15
+630014.065341
+------------------------------------------------------
+
+params = {
+    'task': 'train',
+    'boosting_type': 'gbdt',
+    'objective': 'regression',
+    'metric': {'l2', 'rmse'},
+    'num_leaves': 25,
+    'learning_rate': 0.01,
+    'feature_fraction': 0.2,
+    'bagging_fraction': 0.09,
+    'tree_learner':'voting',
+    'bagging_freq': 2,
+    'max_depth':15,
+    'min_data_in_leaf':22,
+    'verbose': 0
+}
+16
+630004.314129
+
+------------------------------------------------------
+
+params = {
+    'task': 'train',
+    'boosting_type': 'gbdt',
+    'objective': 'regression',
+    'metric': {'l2', 'rmse'},
+    'num_leaves': 25,
+    'learning_rate': 0.01,
+    'feature_fraction': 0.2,
+    'bagging_fraction': 0.09,
+    'tree_learner':'voting',
+    'bagging_freq': 2,
+    'max_depth':15,
+    'min_data_in_leaf':22,
+    'min_sum_hessian_in_leaf':1e-3,
+    'feature_fraction':.3,
+    'verbose': 0
+}
+17
+628335.080018
+
+-------------------------------------------------------
+
+params = {
+    'task': 'train',
+    'boosting_type': 'gbdt',
+    'objective': 'regression',
+    'metric': {'l2', 'rmse'},
+    'num_leaves': 25,
+    'learning_rate': 0.01,
+    'feature_fraction': 0.2,
+    'bagging_fraction': 0.09,
+    'tree_learner':'voting',
+    'bagging_freq': 2,
+    'max_depth':15,
+    'min_data_in_leaf':22,
+    'min_sum_hessian_in_leaf':1e-3,
+    'feature_fraction':.6,
+    'verbose': 0
+}
+18
+628101.829824
+
+------------------------------------------------------
+
+
+
+
+
+CATBOOST
+model = CatBoostRegressor(depth=10, iterations=88, learning_rate=0.1, eval_metric='RMSE', random_seed=1,use_best_model=True)#, verbose=True
+1
+633824.816962
+-------------------------------------------------------
+model = CatBoostRegressor(depth=15, iterations=88, learning_rate=0.1, eval_metric='RMSE', random_seed=1,use_best_model=True)#, verbose=True
+2
+631751.462844
+------------------------------------------------------
+model = CatBoostRegressor(depth=14, iterations=88, learning_rate=0.1, eval_metric='RMSE', random_seed=1,use_best_model=True)#, verbose=True
+3
+630849.11463
+------------------------------------------------------
+l2_leaf_reg=6
+4
+630380.651278
+------------------------------------------------------
+rsm=0.5
+5
+628543.407134
+------------------------------------------------------
+border_count=15
+6
+625910.989988
+------------------------------------------------------
+fold_permutation_block_size=15
+7
+625582.615081
+------------------------------------------------------
+fold_permutation_block_size=14
+8
+625554.095826
+------------------------------------------------------
+bagging_temperature=1.2
+9
+625544.810533
+------------------------------------------------------
+bagging_temperature=1.5
+10
+625284.678098
+------------------------------------------------------
+bagging_temperature=1.8
+11
+625266.009871
+------------------------------------------------------
+bagging_temperature=1.6
+12
+624788.506538
+------------------------------------------------------
