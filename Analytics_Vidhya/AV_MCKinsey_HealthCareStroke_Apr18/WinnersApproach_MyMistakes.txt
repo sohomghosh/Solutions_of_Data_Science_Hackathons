@@ -1,0 +1,36 @@
+#Reference : https://analyticsvidhya.slack.com/
+
+#Winner Rank1 - vamshi294's approach
+Here's my approach: I cleaned outliers, imputed missing data, created interval features, balanced the classes. Trained the model with 67% training data.  Public LB: 190(0.8279) and Private LB: 1(0.8601).  Thanks #AV and the participants.
+
+
+#Runnerup Rank2 - Vidwath's approach
+I used cleaned and imputed data with GLM on 70% of train data
+public leader board: 197 (0.827) and private leader board: 2(0.860)
+
+
+#Nick Iyer's approach
+I got ~60 in public and 26th in private. I used an average of xgboost model and random forest with limited max depth (5) and 30% subsample
+
+# Rank 22: aparna's approach
+My approach outline:
+1. Immediately went and read this mayoclinic article https://www.mayoclinic.org/diseases-conditions/stroke/symptoms-causes/syc-20350113
+2. Separated the features given as those related to stroke (having medical evidence), and those not related to stroke directly as per the article. For example the article does not talk about work type or marital status or residence type
+3. Got another article which says being married at the time of stroke increases chances of survival, but again it is not related to stroke probability.
+4. But always keep in mind that causation and correlation are different, so keep these features nevertheless.
+5. Mayoclinic article greatly helped in making sense of EDA observations.
+6. Incrementally added features and fitted a linear model to predict the missing bmi, because imputing with mean or median both changed its distribution.
+7. On the missing smoke status: it was huge percentage with 30% missing. Did EDA and figured out that among children, missing was always for age < 10. So, put all of them as "never smoked".
+8. Still 20% of them remained. Tried encoding as never smoked - 0, former smoked - 0.5, smokes now as 1 and them imputing by aggregating by age. It was in a different notebook. Did not give results as I expected. former smoke and current smoke definitely have different weightage, because now smokes implies former smoker most cases and not vice versa. Numerical encoding didnt make difference in private LB, hence reverted back to one hot, keeping 20% missing as missing (it disappears when you do drop_first = True with pd.get_dummies)
+9. Age was major factor and its sns.distplot showed that it is most suitable to fit a logreg model
+10. In general I did lot of EDA, not all of it is present in my submitted notebook, and I tried to relate it to business. I am pretty sure that it made a difference. I moved from 182 to 22!
+
+
+
+
+
+######MY MYISTAKES
+1) Did not do missing value treatment
+2) Did not do Outler removal
+3) Did not do Class balancing
+4) should have spent more time exploring the data & making a proper model
