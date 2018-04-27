@@ -1,0 +1,7 @@
+https://www.analyticsvidhya.com/blog/2018/04/winning-solutions-codes-from-avs-signature-hackathon-lord-of-the-machines/
+
+Winner codes:
+Rank 1: Kunal Chakraborty : https://github.com/analyticsvidhya/LordOftheMachines/tree/master/1st_Place_Kunal
+Rank 2: SRK and Mark      : https://github.com/analyticsvidhya/LordOftheMachines/tree/master/2nd_Place_Mark_SRK
+Rank 3: Aditya and Akash  : https://github.com/analyticsvidhya/LordOftheMachines/tree/master/3rd_Place_Aditya_Akash
+
