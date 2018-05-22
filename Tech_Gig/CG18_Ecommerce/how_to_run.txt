@@ -1,0 +1,8 @@
+1) Install packages bs4, pandas, re, gc, difflib, warnings, gensim, numpy
+2) Use code converting_xml_to_csv.py  to convert given xml to csv file
+3) Use using_ml_for_text_clustering_topic_modeling.py to generate features using machine learning
+4) Change paths according to the generated data file in tg_cg18_ecomm_final.py
+5) To run the python file from terminal write:
+python tg_cg18_ecomm_final.py
+6) In browser  type http://0.0.0.0:5000/
+7) Enter search query in the text field and press GO
