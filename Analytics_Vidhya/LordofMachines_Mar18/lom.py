@@ -7,6 +7,7 @@
 import pandas as pd
 from sklearn.metrics import roc_auc_score, auc,roc_curve
 from sklearn.feature_extraction.text import TfidfVectorizer
+from gensim.models import word2vec
 from nltk import word_tokenize
 import numpy as np
 import xgboost as xgb
