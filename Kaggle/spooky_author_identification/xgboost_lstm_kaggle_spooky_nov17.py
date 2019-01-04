@@ -22,7 +22,7 @@ from keras import regularizers
 from keras.models import Model
 from keras.optimizers import SGD, RMSprop, Adam
 from keras.models import Sequential
-
+from nltk.data import load
 from keras.layers import Dense, Activation
 
 from numpy.random import random, normal
@@ -77,6 +77,17 @@ train_test_features=pd.concat([pd.DataFrame(features_sent),pd.DataFrame(features
 
 
 #Number of each pos
+pos_di = {}
+tagdict = load('help/tagsets/upenn_tagset.pickle')
+for pos in list(tagdict.keys()):
+	pos_di[pos] = []
+for snt in train_test['text']:
+	di = Counter([j for i,j in pos_tag(word_tokenize(snt))])
+	for pos in list(tagdict.keys()):
+		pos_di[pos].append(di[pos])
+
+train_test = pd.concat([train_test, pd.DataFrame(pos_di)], axis = 1)
+
 
 #number of non english words
 #Average Number of words each sentences
