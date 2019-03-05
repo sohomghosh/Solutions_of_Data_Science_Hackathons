@@ -2,7 +2,8 @@ import pandas as pd
 import string
 import numpy as np
 import re
-from gensim.models import word2vec
+#from gensim.models import word2vec
+from gensim.models import Word2Vec
 from sklearn.feature_extraction.text import TfidfVectorizer
 import xgboost as xgb
 import fasttext
@@ -37,7 +38,8 @@ num_classes = len(set(train['author']))
 sentences_split=[re.split('\W', i) for i in train_test['text']]
 
 #wordvec
-model_w2v = word2vec.Word2Vec(sentences_split, size=40,min_count =1, window=3, workers =-1,sample=1e-5)
+#model_w2v = word2vec.Word2Vec(sentences_split, size=40,min_count =1, window=3, workers =-1,sample=1e-5)
+model_w2v = Word2Vec(sentences_split, size=word_vec_dim, min_count =1, window=3, workers =-1,sample=1e-5)
 features_sent = np.zeros(shape=(0,40))
 for i in sentences_split:
 	su=np.zeros(shape=(40))
@@ -286,8 +288,8 @@ for doc_text in train_test['text']:
 vocab_size = len(word_index) + 1
 word_vec_dim = 300
 embedding_matrix = np.zeros((vocab_size, word_vec_dim))
-word2vec = word2vec.Word2Vec(sentences_split, size=word_vec_dim, min_count =1, window=3, workers =-1,sample=1e-5)
-
+#word2vec = word2vec.Word2Vec(sentences_split, size=word_vec_dim, min_count =1, window=3, workers =-1,sample=1e-5)
+word2vec = Word2Vec(sentences_split, size=word_vec_dim, min_count =1, window=3, workers =-1,sample=1e-5)
 '''
 using glove
 # load the GloVe vectors in a dictionary:
@@ -640,8 +642,8 @@ for doc_text in train_test['text']:
 #create embedding_matrix if dimension vocab_size X word_vec_dim having each unique word in each row
 embedding_matrix = np.zeros((vocab_size, word_vec_dim))
 
-word2vec = word2vec.Word2Vec(sentences_split, size=word_vec_dim, min_count =1, window=3, workers =-1,sample=1e-5)
-
+#word2vec = word2vec.Word2Vec(sentences_split, size=word_vec_dim, min_count =1, window=3, workers =-1,sample=1e-5)
+word2vec = Word2Vec(sentences_split, size=word_vec_dim, min_count =1, window=3, workers =-1,sample=1e-5)
 for word,idx in word2ids.items():
     if word in word2vec.wv:
         embedding_matrix[idx] = word2vec.wv[word]
