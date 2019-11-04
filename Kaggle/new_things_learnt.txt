@@ -1,0 +1,10 @@
+NEW THINGS LEARNT FOR DEALING WITH STRUCTURED DATASET - CLASSIFICATION / REGRESSION PROBLEM
+-------------------
+*1) Hill Climb ensemble https://www.kaggle.com/hhstrand/hillclimb-ensembling
+2) fast roc_auc computation, Fast metric computation MAEs https://www.kaggle.com/artgor/eda-and-models
+*3) Bayesian Optimization https://www.kaggle.com/vincentlugat/ieee-lgb-bayesian-opt
+4) Adversarial validation
+5) AutoML with h20 https://kaggle.com/tunguz/ieee-with-h2o-automl
+6) SHA Hash key h = hashlib.sha256(s.encode('utf-8')).hexdigest()[0:15] https://www.kaggle.com/super13579/find-client-by-d1-and-card-leak-use-on-submit
+7) categorical feature embedding by using LDA/NMF/LSA https://www.kaggle.com/c/talkingdata-adtracking-fraud-detection/discussion/56475#latest-436248
+8) Matrix Factorization - https://github.com/jfpuget/LibFM_in_Keras/blob/master/keras_blog.ipynb https://www.ibm.com/developerworks/community/blogs/jfp/entry/Implementing_Libfm_in_Keras?lang=en
