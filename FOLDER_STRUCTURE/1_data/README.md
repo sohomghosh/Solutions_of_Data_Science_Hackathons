@@ -1,1 +1,1 @@
-This folder contains all the data files (train, test, validation, submission and intermediary datasets)
+This folder contains all the data files (train, test, validation and intermediary datasets)
